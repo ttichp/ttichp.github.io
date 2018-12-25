@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+
+<head></head>
+<body>
+<div id="flake-container"></div>
+<p id="header">Snow!</p>
+
+<style>
+body {
+  background-color:SkyBlue;
+  overflow:hidden;
+  margin:0;
+}
+
+#window {
+  position:absolute;
+  width:100%;
+  height:100%;
+  box-shadow:0px 0px 50px 20px white inset;
+}
+
+#header {
+  font-family:"Quicksand";
+  text-align:center;
+  color:black;
+  background-color:white;
+  font-size:50px;
+  position:absolute;
+  top:-50px;
+  opacity:0.5;
+  box-shadow:0px 0px 50px 20px white;
+  width:100%;
+}
+
+/* .flake {
+  position:absolute;
+  color:white;
+  background-color:transparent;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  -webkit-user-select:none;
+  pointer-events:none;
+  -webkit-animation: snow 5s linear;
+} */
+
+@-webkit-keyframes snow {
+  from {top:-1%;}
+  to {top:101%;}
+}
+
+@-moz-keyframes snow {
+  from {top:-1%;}
+  to {top:101%;}
+}
+</style>
+
+
+<script>
+var container;
+var timeChoices;
+
+function init() {
+container = document.getElementById("flake-container");
+window.setInterval(createParticle,200);
+timeChoices = [5,6,7,8,9,10];
+}
+
+
+function destroy(evt) {
+  container.removeChild(evt.target);
+}
+
+function createParticle() {
+  var particle = document.createElement("span");
+  var randomSpeed = timeChoices[Math.floor(Math.random()*timeChoices.length)];
+  particle.innerHTML = "*";
+  particle.className = "flake";
+  particle.style.position = "absolute";
+  particle.style.color = "white";
+  particle.style.backgroundColor = "transparent";
+  particle.style.width = "5px";
+  particle.style.height = "5px";
+  particle.style.pointerEvents = "none";
+  particle.style.right = Math.random()*100 + "%";
+  particle.style.borderRadius = "50%";
+  particle.style.WebkitAnimation = "snow " + randomSpeed + "s linear";
+  particle.style.MozAnimation = "snow " + randomSpeed + "s linear";
+  container.appendChild(particle);
+  particle.addEventListener("webkitAnimationEnd", destroy);
+  particle.addEventListener("animationend", destroy);
+}
+
+window.onload = init;
+</script>
+
+
+
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+	<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+	<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+	<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+<h1>Hello World!</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Hello World!</h1>
+	
+
+</body>
+
+</html>
