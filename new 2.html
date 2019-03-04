@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<style>
+body {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height:24px;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clr {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Josefin Slab", "Myriad Pro", Arial, sans-serif;
+}
+
+/*导航*/
+.container > input,
+.container > a {
+  width: 20%;
+  height: 34px;
+  line-height: 34px;
+  position: fixed;
+  bottom: 0;
+}
+
+.container > input {
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.container > a {
+  text-align: center;
+  color: #fff;
+  background: #e23a6e;
+  font-weight: 700;
+  z-index: 10;
+  text-shadow: 1px 1px 1px rgba(151, 24, 64, .2);
+  -webkit-transition:all .3s ease;
+          transition:all .3s ease;
+}
+
+.container > input:hover + a {
+  background: #ad244f;
+}
+
+#tab1,
+#tab1 + a {
+  left: 0%;
+}
+
+#tab2,
+#tab2 + a {
+  left: 20%;
+}
+
+#tab3,
+#tab3 + a {
+  left: 40%;
+}
+
+#tab4,
+#tab4 + a {
+  left: 60%;
+}
+
+#tab5,
+#tab5 + a {
+  left: 80%;
+}
+
+.container > input:checked + a,
+.container > input:checked:hover + a {
+  background: #821134;
+}
+
+.container > input:checked + a:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #821134;
+  position: absolute;
+  left: calc(50% - 20px);
+  bottom: 100%;
+}
+
+
+/*内容*/
+.control {
+  position: relative;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);  
+  -webkit-backface-visibility:hidden;  
+          backface-visibility:hidden;
+  -webkit-transition:all .6s ease-in-out;
+          transition:all .6s ease-in-out;
+}
+
+.control section {
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  overflow:hidden;
+}
+
+#tab1:checked ~ .control{
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#tab2:checked ~ .control{
+  -webkit-transform: translateY(-100vh);
+      -ms-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+}
+
+#tab3:checked ~ .control{
+  -webkit-transform: translateY(-200vh);
+      -ms-transform: translateY(-200vh);
+          transform: translateY(-200vh);
+}
+
+#tab4:checked ~ .control{
+  -webkit-transform: translateY(-300vh);
+      -ms-transform: translateY(-300vh);
+          transform: translateY(-300vh);
+}
+
+#tab5:checked ~ .control{
+  -webkit-transform: translateY(-400vh);
+      -ms-transform: translateY(-400vh);
+          transform: translateY(-400vh);
+}
+
+.control section:nth-child(even){
+  background: #fa96b5;
+  color:#fff;
+}
+
+.icons{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  line-height:200px;
+  left:calc(50% - 100px);
+  -webkit-transform:translateY(-50%) rotate(45deg) ;
+      -ms-transform:translateY(-50%) rotate(45deg) ;
+          transform:translateY(-50%) rotate(45deg) ;
+  background: #fa96b5;
+}
+
+.control section:nth-child(even) .icons{
+  background: #fff;
+}
+
+[data-icon]:after{
+  content:attr(data-icon);
+  font-family:"iconfont";
+  display: block;
+  font-size:80px;
+  text-shadow:1px 1px 1px rgba(151,24,64,.2);
+  color:#fff;
+  -webkit-transform:rotate(-45deg) translateY(25%);
+      -ms-transform:rotate(-45deg) translateY(25%);
+          transform:rotate(-45deg) translateY(25%);
+}
+
+.control section:nth-child(even) [data-icon]:after{
+  color:#fa96b5;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1437361760_8968103.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1437361760_8968103.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1437361760_8968103.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1437361760_8968103.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1437361760_8968103.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.control section h2{
+  color:#e23a6e;
+  font-size:54px;
+  font-weight: 900;
+  line-height: 54px;
+  text-align: center;
+  width:80%;
+  position: absolute;
+  left: 10%;
+  top: 50%; 
+  margin:-70px 0 0;
+  text-shadow:1px 1px 1px rgba(151,24,64,.2);
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+}
+
+.control section:nth-child(even) h2{
+  color:#fff;
+}
+
+#tab1:checked ~ .control #page1 h2,
+#tab2:checked ~ .control #page2 h2,
+#tab3:checked ~ .control #page3 h2,
+#tab4:checked ~ .control #page4 h2,
+#tab5:checked ~ .control #page5 h2{
+  -webkit-animation:moveDown 0.6s ease 0.5s backwards;
+          animation:moveDown 0.6s ease 0.5s backwards;
+}
+
+.control section p{
+  margin:10px 0 0;
+  width:80%;
+  position: absolute;
+  left: 10%;
+  top: 50%; 
+}
+
+.control section:nth-child(even) p{
+  color:rgba(255,255,255,.8);
+}
+
+#tab1:checked ~ .control #page1 p,
+#tab2:checked ~ .control #page2 p,
+#tab3:checked ~ .control #page3 p,
+#tab4:checked ~ .control #page4 p,
+#tab5:checked ~ .control #page5 p{
+  -webkit-animation:moveUp 0.4s ease 0.5s backwards;
+          animation:moveUp 0.4s ease 0.5s backwards;
+}
+
+@-webkit-keyframes moveDown{
+  0%{
+    -webkit-transform:translateY(-40px);
+    opacity: 0;
+  }
+  100%{
+    -webkit-transform:translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes moveDown{
+  0%{
+    transform:translateY(-40px);
+    opacity: 0;
+  }
+  100%{
+    transform:translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes moveUp{
+  0%{
+    -webkit-transform:translateY(40px);
+    opacity: 0;
+  }
+  100%{
+    -webkit-transform:translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes moveUp{
+  0%{
+    transform:translateY(40px);
+    opacity: 0;
+  }
+  100%{
+    transform:translateY(0);
+    opacity: 1;
+  }
+}
+</style>
+<body>
+
+<div class="container">
+  <!-- nav -->
+  <input type="radio" name="tabs" id="tab1" checked>
+  <a href="#page1">Serendip</a>
+  <input type="radio" name="tabs" id="tab2">
+  <a href="#page2">Happiness</a>
+  <input type="radio" name="tabs" id="tab3">
+  <a href="#page3">Tranquillity</a>
+  <input type="radio" name="tabs" id="tab4">
+  <a href="#page4">Positivity</a>
+  <input type="radio" name="tabs" id="tab5">
+  <a href="#page5">Passion</a>
+  <!-- nav end -->
+
+  <div class="control">
+    <section id="page1">
+      <div class="icons" data-icon="&#xe601"></div>
+      <h2>Serendip</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia quidem, suscipit, vel, architecto unde provident iste reiciendis velit molestiae animi. Voluptatem.</p>
+    </section>
+    <section id="page2">
+      <div class="icons" data-icon="&#xe600"></div>
+      <h2>Happiness</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia quidem, suscipit, vel, architecto unde provident iste reiciendis velit molestiae animi. Voluptatem.</p>
+    </section>
+    <section id="page3">
+      <div class="icons" data-icon="&#xe604"></div>
+      <h2>Tranquillity</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia quidem, suscipit, vel, architecto unde provident iste reiciendis velit molestiae animi. Voluptatem.</p>
+    </section>
+    <section id="page4">
+      <div class="icons" data-icon="&#xe602"></div>
+      <h2>Positivity</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia quidem, suscipit, vel, architecto unde provident iste reiciendis velit molestiae animi. Voluptatem.</p>
+    </section>
+    <section id="page5">
+      <div class="icons" data-icon="&#xe603"></div>
+      <h2>Passion</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officia quidem, suscipit, vel, architecto unde provident iste reiciendis velit molestiae animi. Voluptatem.</p>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>
