@@ -1,11 +1,7 @@
-/*!
- * Start Bootstrap - Grayscale v5.0.5 (https://startbootstrap.com/template-overviews/grayscale)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
- */
+
 
 #mainNav {
-  min-height: 56px;
+  min-height: 70px;
   background-color: #fff;
 }
 
@@ -27,7 +23,7 @@
 }
 
 #mainNav .navbar-nav .nav-item:hover {
-  color: fade(white, 80%);
+  color: fade(white, 50%);
   outline: none;
   background-color: transparent;
 }
@@ -37,7 +33,7 @@
   background-color: transparent;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
   #mainNav {
     padding-top: 0;
     padding-bottom: 0;
@@ -87,13 +83,13 @@
 }
 
 .masthead {
-  position: relative;
+ background: url('../img/me_01.jpg') no-repeat fixed;
   width: 100%;
   height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-masthead.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/bg-masthead.jpg");
+  min-height: 20rem;
+  padding: 10rem 0;
+  background: url("img/me_01.jpg");
+  background: url("img/me_01.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -300,5 +296,7 @@ a:focus, a:hover {
 }
 
 footer {
+	
   padding: 5rem 0;
 }
+
