@@ -154,7 +154,7 @@ a:hover, a:focus, a:active {
 .title-text {
   padding: 0px 25px 0px 0px;
   border-right: 5px solid #BE2525;
-  font-size: 40px;
+  font-size: 55px;
 }
 
 .about-text p {
@@ -216,7 +216,7 @@ blockquote {
 }
 
 #certificate{
- background: url('../img/about_02.jpg') no-repeat;
+ background: url('../img/about_15.png') no-repeat;
   background-size: 100% 100%;
   margin-bottom: -3px;
 }
@@ -233,7 +233,7 @@ blockquote {
 
 #contact {
   width: 100%;
-   background: url('../img/about_12.jpg') no-repeat;
+   background: url('../img/about_13.jpg') no-repeat;
   background-size: 100% 100%;
   margin-bottom: -3px;
 }
@@ -414,4 +414,16 @@ footer {
   .title-text {
     margin-bottom: 15px;
   }
+}
+
+
+hr{
+	 display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+	
 }
